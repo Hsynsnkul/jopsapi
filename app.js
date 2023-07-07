@@ -32,6 +32,10 @@ const connectDB = require("./db/connect");
 const authRoute = require("./routes/auth");
 const jobsRoute = require("./routes/jobs");
 
+app.get('/',(req,res)=>{
+  res.status(200).send('jops api')
+})
+
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/jobs", authenticateUser, jobsRoute);
 
